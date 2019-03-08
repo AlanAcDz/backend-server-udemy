@@ -96,7 +96,7 @@ function buscarMedicos(regEx) {
 // Funcion para buscar usuarios por nombre o email
 function buscarUsuarios(regEx) {
     return new Promise((resolve, reject) => {
-        Usuario.find({}, 'nombre email role').or([{ nombre: regEx }, { email: regEx }])
+        Usuario.find({}, 'nombre email role img').or([{ nombre: regEx }, { email: regEx }])
             .exec((err, usuarios) => {
                 if (err) {
                     reject('Error al cargar usuarios', err);
